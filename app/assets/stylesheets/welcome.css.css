@@ -3,3 +3,14 @@
 
 .welcome-header {
   padding-top: 45px; }
+
+.welcome-video-div {
+  padding-top: 40px;
+  padding-left: 40px; }
+
+.main-footer {
+  height: 100px;
+  background-color: #222;
+  color: #2bde73;
+  padding-top: 10px;
+  margin-top: 40px; }
