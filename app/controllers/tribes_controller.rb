@@ -1,5 +1,7 @@
 class TribesController < ApplicationController
   before_action :set_tribe, only: [:show, :edit, :update, :destroy]
+  
+  #update todos, devise views, heroku db:migrate
 
   # GET /tribes
   # GET /tribes.json
