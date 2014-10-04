@@ -75,10 +75,4 @@ class TribesController < ApplicationController
       params[:tribe]
     end
 
-    def authenticate_user
-      if !user_signed_in?
-        flash[:alert] = "You have to sign in to do that!"
-        redirect_to new_user_session_path
-      end
-    end
 end
