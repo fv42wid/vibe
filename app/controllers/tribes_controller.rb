@@ -1,6 +1,7 @@
 class TribesController < ApplicationController
   before_action :set_tribe, only: [:show, :edit, :update, :destroy]
-  
+  before_action :authenticate_user!, except: [:index, :show]
+
   #update todos, devise views, heroku db:migrate
 
   # GET /tribes
@@ -72,5 +73,12 @@ class TribesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def tribe_params
       params[:tribe]
+    end
+
+    def authenticate_user
+      if !user_signed_in?
+        flash[:alert] = "You have to sign in to do that!"
+        redirect_to new_user_session_path
+      end
     end
 end
