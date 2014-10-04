@@ -1,17 +1,18 @@
-%h1 Listing tribes
+%div.container
+  %h1 Listing tribes
 
-%table
-  %tr
-    %th
-    %th
-    %th
-
-  - @tribes.each do |tribe|
+  %table
     %tr
-      %td= link_to 'Show', tribe
-      %td= link_to 'Edit', edit_tribe_path(tribe)
-      %td= link_to 'Destroy', tribe, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %th
+      %th
+      %th
 
-%br
+    - @tribes.each do |tribe|
+      %tr
+        %td= link_to 'Show', tribe
+        %td= link_to 'Edit', edit_tribe_path(tribe)
+        %td= link_to 'Destroy', tribe, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
-= link_to 'New Tribe', new_tribe_path
+  %br
+
+  = link_to 'New Tribe', new_tribe_path
