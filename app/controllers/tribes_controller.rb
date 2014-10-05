@@ -28,6 +28,7 @@ class TribesController < ApplicationController
   # POST /tribes.json
   def create
     @tribe = Tribe.new(tribe_params)
+    @tribe.user_id = current_user.id
 
     respond_to do |format|
       if @tribe.save
@@ -72,7 +73,7 @@ class TribesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tribe_params
-      params[:tribe]
+      params.require(:tribe).permit(:name, :description, :video)
     end
 
 end
