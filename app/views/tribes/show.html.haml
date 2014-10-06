@@ -1,6 +1,17 @@
-%p#notice= notice
+%div.container
+  %div.row
+    %div.col-sm-12
+      %p#notice= notice
 
+  %div.row
+    %div.col-sm-6
+      %h1= @tribe.name
+      %p= @tribe.description
+    %div.col-sm-6.video-div
+      = image_tag 'http://placehold.it/400x260'
 
-= link_to 'Edit', edit_tribe_path(@tribe)
-\|
-= link_to 'Back', tribes_path
+  %div.row
+    %div.col-sm-12
+      = link_to 'Edit', edit_tribe_path(@tribe)
+      \|
+      = link_to 'Back', tribes_path
