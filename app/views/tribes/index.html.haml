@@ -1,14 +1,16 @@
 %div.container
   %h1 Listing tribes
 
-  %table
+  %table.table.table-striped.table-condensed
     %tr
+      %th
       %th
       %th
       %th
 
     - @tribes.each do |tribe|
       %tr
+        %td= tribe.name
         %td= link_to 'Show', tribe
         %td= link_to 'Edit', edit_tribe_path(tribe)
         %td= link_to 'Destroy', tribe, :method => :delete, :data => { :confirm => 'Are you sure?' }
